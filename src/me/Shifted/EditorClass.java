@@ -26,4 +26,9 @@ public class EditorClass extends JFrame{
   public JTabbedPane getTabbedPane1() {
     return tabbedPane1;
   }
+
+  public JPanel getMainArea() {
+    return mainArea;
+  }
+
 }
