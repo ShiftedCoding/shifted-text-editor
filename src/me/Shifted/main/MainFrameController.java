@@ -24,14 +24,25 @@ public class MainFrameController {
   private void registerMenu() {
     JMenu fileMenu = new JMenu("File");
     {
-      fileMenu.add(new JMenuItem("New"));
-      fileMenu.add(new JMenuItem("Open"));
-      fileMenu.add(new JMenuItem("Save"));
-      fileMenu.add(new JMenuItem("Save As"));
+      JMenuItem newItem = fileMenu.add(new JMenuItem("New"));
+      JMenuItem openItem = fileMenu.add(new JMenuItem("Open"));
+      JMenuItem saveItem = fileMenu.add(new JMenuItem("Save"));
+      JMenuItem saveAsItem = fileMenu.add(new JMenuItem("Save As"));
+    }
+    JMenu editMenu = new JMenu("Edit");
+    {
+      editMenu.add(new JMenuItem("Copy"));
+      editMenu.add(new JMenuItem("Cut"));
+      editMenu.add(new JMenuItem("Paste"));
+      editMenu.add(new JSeparator());
+      editMenu.add(new JMenuItem("Preferences"));
     }
 
     JMenuBar menuBar = new JMenuBar();
-    menuBar.add(fileMenu);
+    {
+      menuBar.add(fileMenu);
+      menuBar.add(editMenu);
+    }
 
     editorClass.setJMenuBar(menuBar);
 
